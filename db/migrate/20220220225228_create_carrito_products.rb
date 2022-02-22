@@ -1,0 +1,10 @@
+class CreateCarritoProducts < ActiveRecord::Migration[6.1]
+  def change
+    create_table :carrito_products do |t|
+      t.references :carrito, null: false, foreign_key: true
+      t.references :product, null: false, foreign_key: true
+
+      t.timestamps
+    end
+  end
+end
